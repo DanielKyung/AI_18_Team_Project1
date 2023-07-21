@@ -135,28 +135,6 @@ for date_number in range(1, 5):
 df = pd.DataFrame(flight_data, columns=['month', 'day', 'air_class', 'airline_name', 'departure_time', 'departure_airport', 'arrival_time', 'arrival_airport', 'duration', 'price'])
 df.to_excel('osaka_data.xlsx')
 
-"""
-# MySQL 연결 정보
-host = '127.0.0.1:3306'
-user = 'root'
-password = 'ax1010ax1010'
-database = '당신의_mysql_데이터베이스'
-
-# MySQL 서버에 연결합니다
-connection = mysql.connector.connect(
-    host=host,
-    user=user,
-    password=password,
-    database=database
-)
-
-# SQLAlchemy를 사용하여 'osaka_air' 테이블을 생성합니다
-engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
-df.to_sql('osaka_air', engine, index=False, if_exists='replace')
-
-# MySQL 연결을 닫습니다
-connection.close()
-"""
 
 input("종료하려면 엔터키 입력하세요")
 browser.quit()
